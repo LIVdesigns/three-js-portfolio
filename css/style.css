@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*,
+*:before,
+*::after {
+    margin: 0;
+    padding:0;
+    box-sizing: inherit;
+}
+
+.webgl {
+    position:fixed;
+    top: 0;
+    left:0;
+}
+
+html{
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+
+body{
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    font-family: "Alumni Sans Pinstripe", sans-serif;
+    font-weight: 400;
+    /* background: #CAE3D2; */
+    background: #F7F6B6;
+}
+
+#header {
+    position: fixed;       /* Makes the navbar stay at the top when scrolling */
+    top: 20px;             /* Moves the navbar 20px down from the top */
+    left: 0;
+    width: 100%;           /* Makes the navbar span the full width of the page */
+    height: 70px;
+    background-color: cadetblue;
+    padding-left: 25px;
+    z-index: 10;           /* Keeps it above other elements */
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* Distribute links evenly across the navbar */
+}
+
+#header a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+    font-size: 25px;
+    transition: color 0.3s;
+}
+
+#header a:hover {
+    color: #FF5733; /* Changes color on hover for better visibility */
+}
+
+
+section{
+    height: 100vh;
+    width: 100vh;
+    scroll-snap-align: start;
+    position:relative;
+    padding-top: 80px;  /* Adjust this value based on navbar height */
+    scroll-snap-align: start;
+    position: relative;
+    min-height: calc(100vh - 80px); /* Adjust the section height */
+}
+
+
+section .container{
+    max-width: 1360px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: flex-start;
+}
+
+section.one .container{
+    grid-template-areas: 'content ..';
+}
+
+section.two .container{
+    grid-template-areas: '.. content';
+}
+
+section.three .container{
+    grid-template-areas: 'content ..';
+}
+
+section.four .container{
+    grid-template-areas: '.. content';
+}
+
+.hero{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 50px;
+    flex: 1;
+
+    grid-area: content;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1{
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+
+    font-size: 75px;
+    line-height: 100px;
+    font-weight: 400;
+    width: 100%;
+    height: 100px;
+    text-align: left;
+}
+
+h2{
+    font-size: 85px;
+    font-weight: 600px;
+    line-height: 70px;
+    display: block;
+    width: 100%;
+    font-family: inherit;
+}
+
+h1 span {
+    font-size: 50px;
+    display: block;
+    line-height: 60px;
+    width: 100%;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+p{
+    font-family: "Poppins", sans-serif;    
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 300;
+    width: 100%;
+    display: block;
+
+}
+
+#three .hero a {
+    font-size: 25px; 
+    color: #0077b6; 
+    text-decoration: none; 
+    display: block; 
+    margin-bottom: 10px;
+}
+
+#three .hero a:hover {
+    color: #005f8c; /* Change the color on hover */
+    text-decoration: underline; /* Optional: add underline on hover */
+}
+
+.social-icons {
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-end; /* Align items to the right */
+    margin-top: 20px;
+    margin-right: 65px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Distribute space between elements */
+    align-items: center; /* Align items vertically */
+}
+
+.social-icons a {
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 26px;
+    color: #ffffff;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    background-color: #0077b6;
+    box-shadow: 0px 15px 20px black;
+    background-size: 50% auto; /* Adjust image size to fit within the circle */
+    background-position: center; /* Centers the image inside the circle */
+    background-repeat: no-repeat; /* Prevents image repetition */
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.social-icons .fa-facebook {
+    background-color: #1877f2;
+    background-image: url('/images/facebook.png');
+}
+
+.social-icons .fa-linkedin {
+    background-color: blue;
+    background-image: url('/images/linkedin.png');
+}
+
+.social-icons .fa-instagram {
+    background-color: blueviolet;
+    background-image: url('/images/instgram.png');
+}
+
+.social-icons .fa-yahoo {
+    background-color: #563acc;
+    background-image: url('/images/yahoo.png');
+}
+
+/* PAPER-CHARCOAL */
+.project-image {
+    width: 100%;  /* Adjust width as needed */
+    max-width: 650px;  /* Set a maximum size */
+    height: auto;  /* Maintain aspect ratio */
+    display: block;  /* Make images block-level elements */
+    margin: 10px auto;  /* Center the image */
+    border-radius: 5px;  /* Optional: add rounded corners */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);  /* Optional: add shadow */
+}
+
+.project-description {
+    font-size: 14px;  /* Smaller font size for the description */
+    color: #555;  /* Grayish color for the text */
+    text-align: center;  /* Center the description text */
+    margin-top: 15px;  /* Space between the image and the description */
+    margin-bottom: 15px;
+    font-family: Arial, sans-serif;  /* Use a clean font */
+}
